@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 comepath = os.getenv("COMERAN_CSV_PATH")
 come_xlsx_path = os.getenv("COMERAN_XLSL_PATH")
-result_mkv_path = os.getenv("RESULT_MKV") + "/"
+result_mkv_path = os.getenv("RESULT_MKV") 
 
 print("どうもっこりす。少々お待ちください。")
 
@@ -48,7 +48,7 @@ if question2 == "n":
     print("ガッテン承知の助")
 elif question2 == "y" :
     print("ダウンロードには時間がかかります。少々お待ちください。おすすめはベートーヴェンのワルトシュタインです。")
-    ydl_opts = {'format': 'bestvideo+bestaudio/best','outtmpl':result_mkv_path+"%(title)s.%(ext)s"}
+    ydl_opts = {'format': 'bestvideo+bestaudio/best','outtmpl':"/"+result_mkv_path+"%(title)s.%(ext)s"}
     with YoutubeDL(ydl_opts) as ydl:
         result = ydl.download(["https://m.youtube.com/watch?v=" + str(URL) ])
         print("ダウンロードが完了しました。")
